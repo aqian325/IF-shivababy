@@ -30,7 +30,7 @@ function openPopups() {
               popupWindow.document.body.style.backgroundImage = "url('images/emptyroom.jpeg')";
               // Write HTML content into the popup
               popupWindow.document.write('<html><head><title>convo</title></head><body>');
-              popupWindow.document.write('<h1>' + text + '</h1>');
+              popupWindow.document.write('<h2>' + text + '</h2>');
               popupWindow.document.write('</body></html>');
             } else {
               alert('Popup blocked! Please allow popups for this site.');

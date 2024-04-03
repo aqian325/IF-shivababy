@@ -12,7 +12,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url('/Users/aprilqian/Documents/GitHub/IF-shivababy/images/emptyroom.jpeg');
+  /* background-image: url('/images/emptyroom.jpeg'); */
   background-size: cover;
   background-position: center;
   font-family: 'Gluten', sans-serif;
@@ -28,8 +28,13 @@ h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); */
-  font: GillSans;
 }
+
+h2 {
+  font-size: 40px;
+  font-family: GillSans;
+}
+
 
 button {
   display: block;
@@ -44,6 +49,34 @@ button {
 }
 
 img {
+
+}
+
+/* Apply styles to the image to make it fill the whole window */
+.full-window-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the whole area while maintaining aspect ratio */
+  z-index: -1; /* Send the image behind other content */
+}
+
+/* CSS */
+/* First image class */
+.full-window-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Second image class */
+.half-window-image {
   width: 80%; /* Adjust as needed */
   max-width: 800px; /* Adjust as needed */
 }
