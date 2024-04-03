@@ -1,0 +1,49 @@
+@font-face {
+  font-family: 'Gluten';
+  src: url('fonts/Gluten.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'GillSans';
+  src: url('fonts/GillSans.ttf') format('truetype');
+} 
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('/Users/aprilqian/Documents/GitHub/IF-shivababy/images/emptyroom.jpeg');
+  background-size: cover;
+  background-position: center;
+  font-family: 'Gluten', sans-serif;
+  color: black; /* Assuming white text for contrast */
+}
+.container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 100px;
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  font: GillSans;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px; /* Adjust as needed */
+  padding: 10px 20px;
+  background-color: #aa7ea1; /* Change color as needed */
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+img {
+  width: 80%; /* Adjust as needed */
+  max-width: 800px; /* Adjust as needed */
+}

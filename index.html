@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Gluten:wght@100;200;300;700&display=swap" rel="stylesheet">
+  <title>open spaces</title>
+  <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
+  <script language="javascript" type="text/javascript" src="openspaces.js"></script>
+
+</head>
+
+<body>
+  <div class="sticky-header">
+    <h1> the cost of <br>open space</h1>
+    <p> circle size and color intensity are directly proportional <br>to the total acres of open space in each town.<br><b>scroll down to see more! </b></p>
+    <br><br><br><br><br><br><br><br>    <br><br><br><br><br><br><br><br>
+    <button onclick="openPopup()">why open spaces?</button>
+  </div>
+
+  <div class="parallax-container">
+    <!-- Content Container -->
+  
+    <!-- Opaque Overlay -->
+    <div class="opaque-overlay" id="overlay"></div>
+  </div>
+
+  <!-- JavaScript for the popup box -->
+  <script>
+    function openPopup() {
+      document.getElementById('overlay').style.display = 'block';
+      // Create and append the popup box
+      var popupBox = document.createElement('div');
+      popupBox.className = 'popup-box';
+      popupBox.innerHTML = `
+        <h2>WELCOME to an exploration <br>of OPEN SPACES in MASSACHUSETTS</h2>
+        <p> Hi! I'm <a href="https://aprilq.info" target="_blank">April</a>. I grew up in Shanghai, which was known in the late 2010's as a concrete jungle with horrendous
+        traffic and equally terrible air quality. In middle school, recess time and gym classes were often cancelled on days where the AQI score was deemed unsafe
+        for outdoor activity. Access to open spaces outdoors is a luxury — a fact that I am cognizant of perhaps more intimately than many.  <br><br>      
+        My project delves into the open spaces across all 351 towns in Massachusetts. According to the US Forest Service's official definition, open spaces can encompass forests, grasslands, farms, rivers, and parks. These spaces are vital for our mental and physical well-being, and they provide critical support to agriculture, forestry, and local ecosystems<sup><a href="https://www.fs.usda.gov/science-technology/loss-of-open-space" target="_blank">[1]</a></sup>.
+        I obtained this data from the official MassGIS database<sup><a href="https://www.mass.gov/info-details/massgis-data-protected-and-recreational-openspace" target="_blank">[2]</a></sup>. 
+ <br><br> Median income and population data from the American Community Survey offer insights into accessibility of open spaces across different towns. Each circle in the visualization represents a town, with circle size and color intensity reflecting the total acreage of greenspace.  
+        <br><br> Explore further by clicking on each circle.</p><br>
+        <button onclick="closePopup()">click to explore!</button>
+      `;
+      document.body.appendChild(popupBox);
+    }
+
+    function closePopup() {
+      document.getElementById('overlay').style.display = 'none';
+      // Remove the popup box
+      var popupBox = document.querySelector('.popup-box');
+      if (popupBox) {
+        popupBox.parentNode.removeChild(popupBox);
+      }
+    }
+
+      // Open the popup box when the page loads
+    window.onload = function() {
+      openPopup();
+    };
+  </script>
+</body>
+</html>
