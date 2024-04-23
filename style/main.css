@@ -15,42 +15,76 @@ body {
   /* background-image: url('/images/emptyroom.jpeg'); */
   background-size: cover;
   background-position: center;
+  background-color:black;
   font-family: 'Gluten', sans-serif;
-  color: black; /* Assuming white text for contrast */
-}
+  color:bisque;
+
 .container {
   text-align: center;
 }
 
 h1 {
-  font-size: 100px;
-  /* position: absolute;
-  top: 50%;
+  font-size: 200px;
+  color:bisque;
+  position: absolute;
+  top: 65%;
   left: 50%;
-  transform: translate(-50%, -50%); */
+  transform: translate(-50%, -50%);
 }
 
 h2 {
+  font-size: 32px;
+  font-family: GillSans;
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color:bisque;
+  text-align: left;
+}
+
+h3 {
   font-size: 40px;
   font-family: GillSans;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color:bisque;
+  text-align: left;
 }
 
-
-button {
+button,
+button2 {
   display: block;
+  position: absolute;
   margin: 0 auto;
-  margin-top: 20px; /* Adjust as needed */
-  padding: 10px 20px;
-  background-color: #aa7ea1; /* Change color as needed */
-  color: rgb(0, 0, 0);
-  border: none;
+  font-family: GillSans;
+  padding: 20px;
+  background-color: transparent;
+  font-size: 24px;
+  border-color: #aa7ea1;
+  border-width: 5px;
   border-radius: 20px;
   cursor: pointer;
+  color: bisque;
 }
 
-img {
+button {
+  top: 85%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+}
+
+button2 {
+  top: 85%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  border-color: #aa7ea1;
+  border-width: 15px;
 
 }
+
 
 /* Apply styles to the image to make it fill the whole window */
 .full-window-image {
@@ -77,6 +111,10 @@ img {
 
 /* Second image class */
 .half-window-image {
-  width: 80%; /* Adjust as needed */
+  width: 70%; /* Adjust as needed */
   max-width: 800px; /* Adjust as needed */
+  position: fixed;
+  top: 10%;
+  left: 30%;
+}
 }
