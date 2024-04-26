@@ -10,8 +10,10 @@
   <script language="javascript" type="text/javascript" src="popup1.js"></script>
 </head>
 <body>
+  <div class="tooltip">hopefully you won't run into ... </div>
+
   <div class="container">
-    <div class="typing-effect2" id="typingEffect2">
+    <div class="typing-effect2" id="typingEffect2" style="line-height: 1.5 !important;">
       <!-- Text will be typed here -->
     </div>
     <!-- <div class="bubble-container">
@@ -20,7 +22,17 @@
     </div> -->
     <button class="bubble-button" onclick="openPopupsNew()">WHAT.</button>
   </div>
-
+  <script>
+    // Get the tooltip element
+    const tooltip = document.querySelector('.tooltip');
+  
+    // Move the tooltip along with the mouse cursor
+    document.addEventListener('mousemove', function (event) {
+        tooltip.style.left = (event.clientX + 10) + 'px';
+        tooltip.style.top = (event.clientY + 10) + 'px';
+    });
+  </script>
+  
   <script>
     // Delay the appearance of the link after 3 minutes (180,000 milliseconds)
     setTimeout(function() {
@@ -36,8 +48,8 @@
   <script>
     // Text to be typed out
     const text = `Family, acquaintances ... old friends. The room vibrates <br>
-                  with the low, relentlesss hum of conversation. <br><br>
-                  Debbie pokes the side of your stomach. (Debbie is your mother).`;
+              with the low, relentlesss hum of conversation. <br><br>
+              Debbie pokes the side of your stomach. <span style="font-size: 12px !important;">(Debbie is your mother).</span>`;
 
     // Function to simulate typing effect
     function typeWriter(text, i, speed) {

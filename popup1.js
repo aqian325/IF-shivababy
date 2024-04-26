@@ -19,7 +19,7 @@
                             const popupWindow = window.open('', '_blank', 'width=400,height=200,left=' + Math.random() * (window.innerWidth - 400) + ',top=' + Math.random() * (window.innerHeight - 200));
                             if (popupWindow) {
                                 popupWindow.document.write('<html><head><title>' + title + '</title>');
-                                popupWindow.document.write('<style>* { background: black !important; color: bisque !important; font-family: "Courier New" !important; font-size: 16px !important; }</style>'); // Set background color and text color
+                                popupWindow.document.write('<style>* { background: #202020 !important; color: bisque !important; font-family: "Courier New" !important; font-size: 16px !important; }</style>'); // Set background color and text color
                                 popupWindow.document.write('</head><body>');
                                 popupWindow.document.write(text);
                                 popupWindow.document.write('</body></html>');
