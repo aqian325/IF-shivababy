@@ -8,6 +8,73 @@
   src: url('fonts/GillSans.ttf') format('truetype');
 } 
 
+        /* Define the tooltip */
+        .tooltip {
+          position: fixed;
+          display: none;
+          background-color: black;
+          color: white;
+          padding: 5px;
+          border-radius: 5px;
+          font-family: GillSans, sans-serif;
+          font-size: 24px;
+      }
+
+      /* Show the tooltip when hovering over the whole page */
+      body:hover .tooltip {
+          display: block;
+      }
+
+/* CSS for the typing effect */
+.typing-effect {
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 32px;
+  font-family: GillSans;
+  position: fixed;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: bisque;
+  text-align: center;
+  /* border-right: 1px solid white; Add border for blinking cursor */
+
+  animation: typing 1s steps(40, end), blink-caret 0.5s step-end infinite;
+}
+
+.typing-effect2 {
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 32px;
+  font-family: GillSans;
+  position: fixed;
+  top: 40%;
+  left: 30%;
+  /* transform: translate(-50%, -50%); */
+  color: bisque;
+  text-align: left; /* Align text to the left */
+  max-width: 60ch; /* Adjust this value as needed */
+  animation: typing 2s steps(40, end), blink-caret 0.5s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+      width: 0%;
+  }
+  to {
+      width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+      border-color: transparent;
+  }
+  50% {
+      border-color: white;
+  }
+}
 
 body {
   margin: 0;
@@ -18,7 +85,6 @@ body {
   background-color:black;
   font-family: 'Gluten', sans-serif;
   color:bisque;
-
 .container {
   text-align: center;
 }
@@ -54,12 +120,22 @@ h3 {
   text-align: left;
 }
 
-button,
-button2 {
+p {
+  font-size: 24px;
+  font-family: GillSans;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color:bisque;
+  text-align: left;
+}
+
+button {
   display: block;
   position: absolute;
   margin: 0 auto;
-  font-family: GillSans;
+  font-family: 'Gluten', sans-serif;
   padding: 20px;
   background-color: transparent;
   font-size: 24px;
@@ -71,12 +147,20 @@ button2 {
 }
 
 button {
-  top: 85%;
+  top: 87%;
   left: 70%;
   transform: translate(-50%, -50%);
 }
 
 button2 {
+  display: block;
+  position: absolute;
+  margin: 0 auto;
+  font-family: 'Gluten', sans-serif;
+  padding: 20px;
+  background-color: transparent;
+  font-size: 24px;
+
   top: 85%;
   left: 40%;
   transform: translate(-50%, -50%);
@@ -84,7 +168,39 @@ button2 {
   border-width: 15px;
 
 }
-
+    /* CSS for the bubble image */
+    .bubble-container {
+      position: relative;
+      display: inline-block;
+    }
+    .bubble-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Gluten', sans-serif;
+      font-size: 24px;
+      color: black;
+    }
+    .bubble-image {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      transform: scale(0.1); /* 25% of its current size */
+    }
+    .bubble-button {
+      display: none; /* Initially hide the button */
+      width: 200px; /* Set the width and height as needed */
+      height: 100px;
+      top: 70%;
+      left: 50%;
+      background-size: cover;
+      border: none;
+      cursor: pointer;
+      font-family: 'Gluten', sans-serif;
+      font-size: 50px;
+    }
+}
 
 /* Apply styles to the image to make it fill the whole window */
 .full-window-image {
@@ -116,5 +232,4 @@ button2 {
   position: fixed;
   top: 10%;
   left: 30%;
-}
 }

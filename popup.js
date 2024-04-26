@@ -1,5 +1,5 @@
 function openPopups() {
-  fetch('data/template_text.csv')
+  fetch('data/template_text2.csv')
       .then(response => response.text())
       .then(data => {
           const lines = data.split('\n');
@@ -13,17 +13,20 @@ function openPopups() {
                   }
               }
               if (text) {
-                  const title = text.match(/<p>(\w+)/)[1]; // Get the first word of the text
-                  const popupWindow = window.open('', '_blank', 'width=400,height=200,left=' + Math.random() * (window.innerWidth - 400) + ',top=' + Math.random() * (window.innerHeight - 200));
-                  if (popupWindow) {
-                      popupWindow.document.body.style.backgroundImage = "url('images/emptyroom.jpeg')";
-                      popupWindow.document.write('<html><head><title>' + title + '</title></head><body style="font-family: Courier New; font-size: 16px;">');
-                      popupWindow.document.write(text);
-                      popupWindow.document.write('</body></html>');
-                      popupWindow.document.close(); // Close the document to prevent about:blank
-                  } else {
-                      alert('Popup blocked! Please allow popups for this site.');
-                  }
+                  setTimeout(() => {
+                      const title = text.match(/<p>(\w+)/)[1]; // Get the first word of the text
+                      const popupWindow = window.open('', '_blank', 'width=400,height=200,left=' + Math.random() * (window.innerWidth - 400) + ',top=' + Math.random() * (window.innerHeight - 200));
+                      if (popupWindow) {
+                          popupWindow.document.write('<html><head><title>' + title + '</title>');
+                          popupWindow.document.write('<style>* { background: black !important; color: bisque !important; font-family: "Courier New" !important; font-size: 16px !important; }</style>'); // Set background color and text color
+                          popupWindow.document.write('</head><body>');
+                          popupWindow.document.write(text);
+                          popupWindow.document.write('</body></html>');
+                          popupWindow.document.close(); // Close the document to prevent about:blank
+                      } else {
+                          alert('Popup blocked! Please allow popups for this site.');
+                      }
+                  }, i * 2000); // Delay each window by 3 seconds
               }
           }
       })

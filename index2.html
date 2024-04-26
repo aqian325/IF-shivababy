@@ -7,24 +7,72 @@
   <link href="https://fonts.googleapis.com/css2?family=Gluten:wght@100;200;300;700&display=swap" rel="stylesheet">
   <title>cringe as horror</title>
   <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
-  <script language="javascript" type="text/javascript" src="popup.js"></script>
-
-
+  <script language="javascript" type="text/javascript" src="popup1.js"></script>
+</head>
 <body>
   <div class="container">
-    <h3>I'd tell you to tread carefully, but ... <br>you know what you're getting into.</h3>
-    <button onclick="openPopups()">go say hello</button>
-      </div>
+    <div class="typing-effect2" id="typingEffect2">
+      <!-- Text will be typed here -->
+    </div>
+    <!-- <div class="bubble-container">
+      <img src="images/bubble1.png" alt="Bubble" id="bubbleImage" style="display: none;">
+      <div class="bubble-text" id="bubbleText">what</div>
+    </div> -->
+    <button class="bubble-button" onclick="openPopupsNew()">WHAT.</button>
+  </div>
+
   <script>
     // Delay the appearance of the link after 3 minutes (180,000 milliseconds)
     setTimeout(function() {
         var link = document.createElement('a');
-        link.href = 'explanation.html';
-        var button2 = document.createElement('button2');
-        button2.textContent = "let's regroup";
-        link.appendChild(button2);
+        link.href = 'index3.html';
+        var button = document.createElement('button');
+        button.textContent = "click here to proceed";
+        link.appendChild(button);
         document.body.appendChild(link);
-    }, 1800); // 3 minutes in milliseconds
-</script>
+    }, 30000); // 3 minutes in milliseconds
+  </script>
+  
+  <script>
+    // Text to be typed out
+    const text = `Family, acquaintances ... old friends. The room vibrates <br>
+                  with the low, relentlesss hum of conversation. <br><br>
+                  Debbie pokes the side of your stomach. (Debbie is your mother).`;
+
+    // Function to simulate typing effect
+    function typeWriter(text, i, speed) {
+      const container = document.getElementById("typingEffect2");
+      if (i < text.length) {
+        // Check if the current character is a '<' which starts an HTML tag
+        if (text.charAt(i) === '<') {
+          // Find the end of the HTML tag
+          let j = i;
+          while (text.charAt(j) !== '>') {
+            j++;
+          }
+          // Append the entire HTML tag at once
+          container.innerHTML += text.substring(i, j + 1);
+          i = j + 1; // Move i to the character after '>'
+        } else {
+          // Append the next character to the typing effect container
+          container.innerHTML += text.charAt(i);
+          i++;
+        }
+
+        setTimeout(function() {
+          typeWriter(text, i, speed);
+        }, speed);
+      } else {
+        setTimeout(function() {
+          document.querySelector('.bubble-button').style.display = 'block';
+        }, 1000);
+      }
+    }
+    
+    // Start typing effect on page load
+    window.onload = function() {
+      typeWriter(text, 0, 50); // Adjust speed as needed (lower value for faster typing)
+    };
+  </script>
 </body>
 </html>

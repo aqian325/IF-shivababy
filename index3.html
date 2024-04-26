@@ -18,31 +18,24 @@
       <img src="images/bubble1.png" alt="Bubble" id="bubbleImage" style="display: none;">
       <div class="bubble-text" id="bubbleText">what</div>
     </div> -->
-    <!-- <button class="bubble-button" onclick="openPopups()">uh oh</button> -->
-    <p>
-      <br><br><br><br>Rationale for the project
-      etc etc etc
-      something about games, choice
-      why shiva baby, why horror
-  <br><br>
-      Thanks for playing! 
-    </p>    
+    <button class="bubble-button" onclick="openPopups()">uh oh</button>
   </div>
-
   <script>
     // Delay the appearance of the link after 3 minutes (180,000 milliseconds)
     setTimeout(function() {
         var link = document.createElement('a');
-        link.href = 'index.html';
+        link.href = 'explanation.html';
         var button = document.createElement('button');
-        button.textContent = "start over";
+        button.textContent = "leave";
         link.appendChild(button);
         document.body.appendChild(link);
-    }, 3000); // 30 sec in milliseconds
+    }, 30000); // 30 sec in milliseconds
   </script>
   <script>
     // Text to be typed out
-    const text = `Congratulations. You made it out alive.`;
+    const text = `You're feeling peckish. <br>
+                  Head over to the snack table. <br><br>
+                  Just as you're browsing your options...`;
 
     // Function to simulate typing effect
     function typeWriter(text, i, speed) {

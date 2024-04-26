@@ -10,16 +10,68 @@
   <script language="javascript" type="text/javascript" src="popup.js"></script>
 
 
-<body>
+<body class="tooltip-trigger">
   <div class="container">
     <h1>welcome</h1>
-    <h2>everyone's already here.</h2>
+    <br><br><br><br><br><br><br><br>
+    <div class="typing-effect" id="typingEffect">
+    <!-- <h2>everyone's already here.</h2> -->
+  </div>
+    <div class="tooltip">please allow popups for this site</div>
+
         <!-- Button to go to Index 2 -->
+
+<!--   
         <a href="index2.html">
           <button>click here to proceed</button>
-      </a>
+      </a> -->
+ 
     <img src="images/house2.png" alt="House Image" class="half-window-image">
   </div>
 
+<script>
+  // Delay the appearance of the link after 3 minutes (180,000 milliseconds)
+  setTimeout(function() {
+      var link = document.createElement('a');
+      link.href = 'index2.html';
+      var button = document.createElement('button');
+      button.textContent = "click here to proceed";
+      link.appendChild(button);
+      document.body.appendChild(link);
+  }, 3600); // 3 minutes in milliseconds
+</script>
+
+<script>
+  // Get the tooltip element
+  const tooltip = document.querySelector('.tooltip');
+
+  // Move the tooltip along with the mouse cursor
+  document.addEventListener('mousemove', function (event) {
+      tooltip.style.left = (event.clientX + 10) + 'px';
+      tooltip.style.top = (event.clientY + 10) + 'px';
+  });
+</script>
+
+<script>
+  // Text to be typed out
+  const text = "everyone's already here."; // Replace this with your desired text
+
+  // Function to simulate typing effect
+  function typeWriter(text, i, speed) {
+      if (i < text.length) {
+          // Append the next character to the typing effect container
+          document.getElementById("typingEffect").innerHTML += text.charAt(i);
+          i++;
+          setTimeout(function() {
+              typeWriter(text, i, speed);
+          }, speed);
+      }
+  }
+
+  // Start typing effect on page load
+  window.onload = function() {
+      typeWriter(text, 0, 100); // Adjust speed as needed (lower value for faster typing)
+  };
+</script>
 </body>
 </html>
