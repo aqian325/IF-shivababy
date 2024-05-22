@@ -228,11 +228,11 @@ button2 {
 
 /* Second image class */
 .half-window-image {
-  width: 70%; /*Adjust as needed */
+  width: 80vw; /*Adjust as needed */
   max-width: 800px; /* Adjust as needed */
-  position: fixed;
-  top: 10%;
+  position: absolute;
+  /* top: 10%; */
   /* left: 50%; */
   justify-content: center;
-  transform: translate(-50%, 0%);
+  transform: translate(-50%, +25%);
 }
