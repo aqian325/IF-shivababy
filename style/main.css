@@ -85,6 +85,7 @@ body {
   background-color:black;
   font-family: 'Gluten', sans-serif;
   color:bisque;
+
 .container {
   text-align: center;
 }
@@ -227,9 +228,11 @@ button2 {
 
 /* Second image class */
 .half-window-image {
-  width: 70%; /* Adjust as needed */
+  width: 70%; /*Adjust as needed */
   max-width: 800px; /* Adjust as needed */
   position: fixed;
   top: 10%;
-  left: 30%;
+  /* left: 50%; */
+  justify-content: center;
+  transform: translate(-50%, +20%);
 }
