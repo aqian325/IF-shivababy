@@ -234,5 +234,5 @@ button2 {
   top: 10%;
   /* left: 50%; */
   justify-content: center;
-  transform: translate(-50%, +20%);
+  transform: translate(-50%, 0%);
 }
